@@ -2,6 +2,9 @@ name: Terraform Destroy
 
 on:
   workflow_dispatch:
+    
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   terraform:
@@ -9,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
